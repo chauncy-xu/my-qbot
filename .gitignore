@@ -146,3 +146,4 @@ pytrader/user_config.sh
 
 **.DS_Store
 .history/
+.vscode/settings.json

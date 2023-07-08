@@ -27,20 +27,13 @@ import tushare as ts
 
 from utils.larkbot import LarkBot
 
-"""
-description: 
-param {*} title
-param {*} text
-return {*}
-use: 
-"""
-
 
 def show_notification(title, text):
+    # 一个提示
     os.system(
         """
-              osascript -e 'display notification "{}" with title "{}"'
-              """.format(
+        osascript -e 'display notification "{}" with title "{}"'
+        """.format(
             text, title
         )
     )
@@ -117,8 +110,8 @@ top_path = os.path.dirname(os.path.abspath(sys.argv[0]))
 sounds_file = os.path.join(top_path, "./qbot/sounds/bell.wav")
 
 while True:
-    WEBHOOK_SECRET = "wNMVU3ewSm2F0G2TwTX4Fd"
-    bot = LarkBot(secret=WEBHOOK_SECRET)
+    WEBHOOK_SECRET = "wNMVU3ewSm2F0G2TwTX4Fd" #TODO: 这个不知道是什么东西
+    bot = LarkBot(secret=WEBHOOK_SECRET) # * 飞书机器人
     if check("sh", 3300, 10000) or check("601318", 0, 49):
         bot.send(content="[Signal💡] 中国平安 低于 ¥49")
 

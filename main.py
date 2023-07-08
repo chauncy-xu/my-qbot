@@ -15,5 +15,6 @@ if __name__ == "__main__":
     os.popen(
         "python /usr/local/anaconda3/bin/python /Users/charmve/Qbot/auto_monitor.py"
     )
+    # 从这里可以看出，入口是auto_monitor.py
 
     app.MainLoop()
