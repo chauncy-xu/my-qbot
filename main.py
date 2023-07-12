@@ -18,3 +18,4 @@ if __name__ == "__main__":
     # 从这里可以看出，入口是auto_monitor.py
 
     app.MainLoop()
+    # test
