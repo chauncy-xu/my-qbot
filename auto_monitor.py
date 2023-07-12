@@ -22,7 +22,7 @@ import time
 import urllib.request  # noqa F401
 
 import pandas as pd
-import pync
+import pync # 这个库可以在Mac上显示通知
 import tushare as ts
 
 from utils.larkbot import LarkBot
@@ -118,9 +118,9 @@ while True:
         priceNow = 48
         pync.notify(
             f'{"中国平安"}当前价格为{priceNow}',
-            title=f'Qbot - {"中国平安"}股票已低于设定值{49}',
-            open="https://ufund-me.github.io/",
-            appIcon="./gui/imgs/logo.ico",
+            title=f'Qbot - {"中国平安"}股票已低于设定值{49}', # 通知的标题
+            open="https://ufund-me.github.io/", # 点击通知会打开这个链接
+            appIcon="./gui/imgs/logo.ico", # 通知的图标
         )
         # pync.notify(
         #     "Reminder - Drink Water, Sir",
@@ -141,6 +141,12 @@ while True:
         # os.system('play ./qbot/sounds/alert-bells.wav')
         # if MacOs
         os.system(f"afplay {sounds_file}")
+        """ 用于在Python中执行shell命令
+         用来使用macOS的afplay命令播放音频文件
+         代码中的f"afplay {sounds_file}"部分使用f-string来动态生成播放音频文件的命令，sounds_file变量指定了要播放的音频文件。
+         需要注意的是，如果没有正确验证或清理输入，使用os.system执行命令可能存在安全风险。建议使用其他方法，如subprocess模块，以更可控的方式执行命令。
+        """
+
 
         #  exit()
     time.sleep(2)
